@@ -20,6 +20,7 @@ public class Product {
     @Enumerated(EnumType.STRING)
     private InventoryStatus inventoryStatus;
     private double rating;
+    @Column(updatable = false)
     private Long createdAt;
     private Long updatedAt;
 
