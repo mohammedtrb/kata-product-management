@@ -1,13 +1,23 @@
 package trial.alten.kata.dtos;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+
 public class ProductDto {
     private Long id;
+    @NotBlank(message = "Le code ne peut pas être vide")
     private String code;
+    @NotBlank(message = "Le nom ne peut pas être vide")
     private String name;
     private String description;
     private String image;
     private String category;
+    @Positive(message = "Le prix doit être positif")
     private double price;
+    @NotNull(message = "La quantité ne peut pas être nulle")
+    @Min(value = 0, message = "La quantité doit être supérieure ou égale à 0")
     private int quantity;
     private String internalReference;
     private Long shellId;
