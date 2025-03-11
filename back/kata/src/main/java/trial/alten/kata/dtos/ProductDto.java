@@ -1,9 +1,6 @@
 package trial.alten.kata.dtos;
 
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.*;
 
 public class ProductDto {
     private Long id;
@@ -19,6 +16,7 @@ public class ProductDto {
     @NotNull(message = "La quantité ne peut pas être nulle")
     @Min(value = 0, message = "La quantité doit être supérieure ou égale à 0")
     private int quantity;
+    @Pattern(regexp = "IN_STOCK|LOW_STOCK|OUT_OF_STOCK", message = "Statut d'inventaire invalide")
     private String internalReference;
     private Long shellId;
     private String inventoryStatus;
