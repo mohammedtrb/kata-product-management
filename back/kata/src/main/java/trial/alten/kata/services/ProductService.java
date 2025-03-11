@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 import trial.alten.kata.models.Product;
 import trial.alten.kata.repositories.ProductRepository;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
