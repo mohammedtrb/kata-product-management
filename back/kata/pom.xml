@@ -12,13 +12,16 @@
 	<artifactId>kata</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>kata</name>
-	<description>KATA Project</description>
+	<description>KATA Project - Project management</description>
 	<url/>
 	<licenses>
 		<license/>
 	</licenses>
 	<developers>
-		<developer/>
+		<developer>
+			<name>Mohammed TOURAB</name>
+			<email>mohammedtourab@gmail.com</email>
+		</developer>
 	</developers>
 	<scm>
 		<connection/>
