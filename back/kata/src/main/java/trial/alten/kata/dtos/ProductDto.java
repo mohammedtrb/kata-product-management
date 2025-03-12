@@ -16,9 +16,9 @@ public class ProductDto {
     @NotNull(message = "La quantité ne peut pas être nulle")
     @Min(value = 0, message = "La quantité doit être supérieure ou égale à 0")
     private int quantity;
-    @Pattern(regexp = "IN_STOCK|LOW_STOCK|OUT_OF_STOCK", message = "Statut d'inventaire invalide")
     private String internalReference;
     private Long shellId;
+    @Pattern(regexp = "IN_STOCK|LOW_STOCK|OUT_OF_STOCK", message = "Statut d'inventaire invalide")
     private String inventoryStatus;
     private double rating;
     private Long createdAt;

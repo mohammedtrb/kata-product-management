@@ -3,6 +3,10 @@ package trial.alten.kata.models;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "products",
+        uniqueConstraints = {
+                @UniqueConstraint(columnNames = {"code"})
+        })
 public class Product {
 
     @Id
