@@ -23,8 +23,14 @@ public class UserService {
 
     public User createUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        Role userRole = roleRepository.findByName("USER");
-        user.setRoles(Set.of(userRole));
+        if ("admin@admin.com".equals(user.getEmail())) {
+            Role adminRole = roleRepository.findByName("ADMIN");
+            user.setRole(adminRole);
+        }else {
+            Role userRole = roleRepository.findByName("USER");
+            user.setRole(userRole);
+        }
+
         return userRepository.save(user);
     }
 
