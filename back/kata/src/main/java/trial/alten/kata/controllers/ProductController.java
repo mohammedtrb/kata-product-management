@@ -1,5 +1,6 @@
 package trial.alten.kata.controllers;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -14,6 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/products")
 @Validated
+@Tag(name = "Product Operations", description = "Endpoints for handling product operations.")
 public class ProductController {
 
     private final ProductService productService;

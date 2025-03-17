@@ -1,5 +1,6 @@
 package trial.alten.kata.controllers;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,6 +11,7 @@ import trial.alten.kata.services.AuthService;
 
 @RestController
 @RequestMapping("/token")
+@Tag(name = "Token Operations", description = "Endpoints for handling token operations.")
 public class TokenController {
 
     private final AuthService authService;
