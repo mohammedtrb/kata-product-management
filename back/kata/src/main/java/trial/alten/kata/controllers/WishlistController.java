@@ -1,6 +1,7 @@
 package trial.alten.kata.controllers;
 
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,7 @@ import trial.alten.kata.services.WishlistService;
 
 @RestController
 @RequestMapping("/wishlist")
+@Tag(name = "Wishlist Operations", description = "Endpoints for handling wishlist operations.")
 public class WishlistController {
 
     private final WishlistService wishlistService;
