@@ -1,6 +1,7 @@
 package trial.alten.kata.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -17,13 +18,9 @@ public class Cart {
     @JsonIgnore
     private User user;
 
-    @ManyToMany
-    @JoinTable(
-            name = "cart_products",
-            joinColumns = @JoinColumn(name = "cart_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id")
-    )
-    private List<Product> products = new ArrayList<>();
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonManagedReference
+    private List<OrderDetail> orderDetails = new ArrayList<>();
 
     @Column(updatable = false)
     private Long createdAt;
@@ -45,13 +42,14 @@ public class Cart {
         this.user = user;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public List<OrderDetail> getOrderDetails() {
+        return orderDetails;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public void setOrderDetails(List<OrderDetail> orderDetails) {
+        this.orderDetails = orderDetails;
     }
+
 
     public Long getCreatedAt() {
         return createdAt;
